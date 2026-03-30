@@ -15,7 +15,7 @@ spec:
         - "flightctl-agent.service"
         - "microshift.service"
     config:
-      - name: base-config
+      - name: demo-configurations
         gitRef:
           repository: default-repo
           targetRevision: main
