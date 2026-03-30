@@ -14,3 +14,9 @@ spec:
       matchPatterns:
         - "flightctl-agent.service"
         - "microshift.service"
+    config:
+      - name: base-config
+        gitRef:
+          repository: default-repo
+          targetRevision: main
+          path: /demo-configuration
