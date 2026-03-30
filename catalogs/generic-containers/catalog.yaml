@@ -1,0 +1,6 @@
+apiVersion: flightctl.io/v1alpha1
+kind: Catalog
+metadata:
+  name: demo-catalog
+spec:
+  displayName: 'Demo Catalog'

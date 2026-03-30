@@ -1,0 +1,22 @@
+apiVersion: flightctl.io/v1alpha1
+kind: CatalogItem
+metadata:
+  catalog: demo-catalog
+  name: nginx
+spec:
+  artifacts:
+    - type: container
+      uri: docker.io/nginx
+  category: application
+  defaults:
+    config:
+      ports:
+      - 8080:80
+  displayName: Nginx Web Server
+  type: container
+  versions:
+  - channels:
+    - stable
+    references:
+      container: latest
+    version: 3.23.0
