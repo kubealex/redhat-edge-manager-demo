@@ -17,6 +17,6 @@ spec:
     config:
       - name: demo-configurations
         gitRef:
-          repository: default-repo
+          repository: demo-configurations
           targetRevision: main
           path: /demo-configuration
