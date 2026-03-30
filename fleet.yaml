@@ -1,0 +1,16 @@
+apiVersion: flightctl.io/v1alpha1
+kind: Fleet
+metadata:
+ name: fleet-kiosk
+spec:
+ selector:
+  matchLabels:
+   fleet: kiosk
+ template:
+  spec:
+    os:
+      image: quay.io/kubealex/image-mode-kiosk:latest
+    systemd:
+      matchPatterns:
+        - "flightctl-agent.service"
+        - "microshift.service"
