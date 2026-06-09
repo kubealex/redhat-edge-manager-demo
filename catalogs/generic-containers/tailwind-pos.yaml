@@ -1,0 +1,22 @@
+apiVersion: flightctl.io/v1alpha1
+kind: CatalogItem
+metadata:
+  catalog: demo-catalog
+  name: tailwind-pos
+spec:
+  artifacts:
+    - type: container
+      uri: quay.io/kubealex/tailwind-pos:latest
+  category: application
+  defaults:
+    config:
+      ports:
+      - 8080:80
+  displayName: Tailwind POS
+  type: container
+  versions:
+  - channels:
+    - stable
+    references:
+      container: latest
+    version: 1.0.0
