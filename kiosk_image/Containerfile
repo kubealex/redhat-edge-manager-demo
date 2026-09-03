@@ -12,13 +12,13 @@ RUN dnf config-manager --set-enabled edge-manager-1.2-for-rhel-10-$(uname -m)-rp
 
 RUN pass=$(mkpasswd --method=SHA-512 --rounds=4096 redhat) && useradd -m -G wheel redhat -p $pass
 RUN echo "%wheel        ALL=(ALL)       NOPASSWD: ALL" > /etc/sudoers.d/wheel-sudo
-COPY demo-key.pub /tmp/demo-key.pub
+COPY demo_key.pub /tmp/demo_key.pub
 RUN mkdir -p /home/redhat/.ssh && \
-    cp /tmp/demo-key.pub /home/redhat/.ssh/authorized_keys && \
+    cp /tmp/demo_key.pub /home/redhat/.ssh/authorized_keys && \
     chown -R redhat:redhat /home/redhat/.ssh && \
     chmod 700 /home/redhat/.ssh && \
     chmod 600 /home/redhat/.ssh/authorized_keys && \
-    rm /tmp/demo-key.pub
+    rm /tmp/demo_key.pub
 
 RUN systemctl set-default graphical.target && \
     systemctl enable flightctl-agent.service && \
