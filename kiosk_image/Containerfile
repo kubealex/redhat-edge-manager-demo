@@ -49,4 +49,5 @@ RUN ln -s /usr/share/containers/systemd/tailwind.container /usr/lib/bootc/bound-
 
 RUN dconf update
 
+COPY --chmod=644 kiosk_autostart.desktop /usr/share/kiosk/kiosk_autostart.desktop
 COPY config.yaml /etc/flightctl/config.yaml
