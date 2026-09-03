@@ -6,12 +6,12 @@ metadata:
 spec:
   artifacts:
     - type: container
-      uri: quay.io/kubealex/tailwind-pos:latest
+      uri: quay.io/kubealex/tailwind-pos
   category: application
   defaults:
     config:
       ports:
-      - 8080:80
+      - 8080:8080
   displayName: Tailwind POS
   type: container
   versions:
