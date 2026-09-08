@@ -13,7 +13,6 @@ spec:
     systemd:
       matchPatterns:
         - "flightctl-agent.service"
-        - "microshift.service"
     config:
       - name: demo-configurations
         gitRef:
