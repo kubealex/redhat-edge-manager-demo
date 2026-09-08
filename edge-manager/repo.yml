@@ -1,0 +1,8 @@
+---
+apiVersion: flightctl.io/v1beta1
+kind: Repository
+metadata:
+  name: demo-configuration
+spec:
+  type: git
+  url: https://github.com/kubealex/redhat-edge-manager-demo

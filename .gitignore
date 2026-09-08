@@ -2,3 +2,4 @@
 client-enrollment.crt
 client-enrollment.key
 ca.crt
+kiosk_image/config.yaml
