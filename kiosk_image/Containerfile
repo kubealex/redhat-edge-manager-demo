@@ -4,8 +4,8 @@ FROM registry.redhat.io/rhel10/rhel-bootc:latest
 # Install GNOME and enable graphical.target as default
 # Remove GNOME initial setup and tour to avoid first boot pop-ups
 
-RUN dnf config-manager --set-enabled edge-manager-1.2-for-rhel-10-$(uname -m)-rpms && \
-    dnf -y install tmux flightctl-agent  mkpasswd git firefox unzip && \
+RUN dnf config-manager --set-enabled edge-manager-1.3-for-rhel-10-$(uname -m)-rpms && \
+    dnf -y install tmux flightctl-agent greenboot greenboot-default-health-checks mkpasswd git firefox unzip && \
     dnf group install -y --allowerasing GNOME Fonts && \
     dnf remove -y gnome-initial-setup gnome-tour && \
     dnf clean all
@@ -22,6 +22,7 @@ RUN mkdir -p /home/redhat/.ssh && \
 
 RUN systemctl set-default graphical.target && \
     systemctl enable flightctl-agent.service && \
+    systemctl enable greenboot-healthcheck.service && \
     systemctl mask bootc-fetch-apply-updates.timer
 
 # COPY the auth.json to enable the image to authenticate with GHCR
